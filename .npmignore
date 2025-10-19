@@ -1,0 +1,41 @@
+# -----------------------------
+# Build and dependency folders
+# -----------------------------
+node_modules
+coverage
+.env
+.vscode
+.idea
+
+# -----------------------------
+# Source and config files (you only need to ship dist/)
+# -----------------------------
+source/
+babel.config.js
+.eslintrc.js
+.prettierrc
+.prettierignore
+xo.config.js
+ava.config.js
+
+# -----------------------------
+# System & editor files
+# -----------------------------
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# -----------------------------
+# Miscellaneous
+# -----------------------------
+*.md.bak
+*.tmp
+*.swp
+
+# -----------------------------
+# Optional: exclude screenshots, demos, or mockups
+# -----------------------------
+assets/
+mockups/
+screenshots/
