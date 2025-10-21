@@ -2,10 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Box, Text, useInput } from 'ink';
 import gradientString from 'gradient-string';
 
+
+
+import {useFocus} from '../context/FocusContext.js';
+
+
+
 const Sidebar = ({ onSelect }) => {
-	const sections = [ 'About', 'Skills', 'Projects', 'Experience', 'Contact' ];
+	const sections = [ 'About', 'Skills', 'Projects', 'Experience','Contact' ];
 	const [activeIndex, setActiveIndex] = useState(0);
 	const gradient = gradientString('cyan', 'magenta');
+
+
+	const {activeFocus, setActiveFocus} = useFocus();
+
 
     useEffect(() => {
 		onSelect(sections[activeIndex]);
@@ -13,10 +23,17 @@ const Sidebar = ({ onSelect }) => {
 
 
 	useInput((input, key) => {
+        if (activeFocus !== 'sidebar') return;
+
+
 		if (key.upArrow) {
 			setActiveIndex((prev) => (prev > 0 ? prev - 1 : sections.length - 1));
 		} else if (key.downArrow) {
 			setActiveIndex((prev) => (prev < sections.length - 1 ? prev + 1 : 0));
+		}
+		if (key.return) {
+		onSelect(sections[activeIndex]);
+		setActiveFocus('page');
 		}
 	});
 
