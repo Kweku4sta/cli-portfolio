@@ -17,7 +17,6 @@ export default function App() {
 
 	useEffect(() => {
 		process.stdout.write('\x1Bc');
-		console.clear();
 	}, [currentPage]);
 
 	const renderPage = () => {
@@ -38,14 +37,27 @@ export default function App() {
 				return null;
 		}
 	};
+
 	return (
-		<Box flexDirection="column" borderStyle="round" borderColor="cyan">
+		<Box
+			flexDirection="column"
+			borderStyle="round"
+			borderColor="cyan"
+			padding={1}
+			width="100%"
+			minHeight={25} 
+		>
 			<Header />
-				<Box flexDirection="row" marginTop={1}>
-				<Sidebar onSelect={setCurrentPage}  />
-				<Box marginLeft={3}>{renderPage()}</Box>
+
+			<Box flexDirection="row" marginTop={1} flexGrow={1}>
+				<Sidebar onSelect={setCurrentPage} />
+				<Box marginLeft={3} flexGrow={1} justifyContent="flex-start">
+					{renderPage()}
+				</Box>
 			</Box>
-			<Footer />
+			<Box marginTop={1}>
+				<Footer />
+			</Box>
 		</Box>
 	);
 }

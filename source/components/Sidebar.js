@@ -3,7 +3,7 @@ import { Box, Text, useInput } from 'ink';
 import gradientString from 'gradient-string';
 
 const Sidebar = ({ onSelect }) => {
-	const sections = [ 'About', 'Skills', 'Projects', 'Experience', 'Contact'];
+	const sections = [ 'About', 'Skills', 'Projects', 'Experience', 'Contact' ];
 	const [activeIndex, setActiveIndex] = useState(0);
 	const gradient = gradientString('cyan', 'magenta');
 
