@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Box, Text, useInput, useApp } from 'ink';
+import {useFocus} from '../context/FocusContext.js';
+
+
 
 export default function Contact() {
 	const { exit } = useApp();
 	const [cursor, setCursor] = useState(0);
 	const [selected, setSelected] = useState(false);
+	const {activeFocus, setActiveFocus} = useFocus();
+
 
 	const contactOptions = [
 		{ label: '📧 Email', value: 'ansahforster.dev@gmail.com' },
@@ -14,10 +19,13 @@ export default function Contact() {
 	];
 
 	useInput((input, key) => {
+		if (activeFocus !== 'page') return;
 		if (key.upArrow) setCursor((cursor - 1 + contactOptions.length) % contactOptions.length);
 		if (key.downArrow) setCursor((cursor + 1) % contactOptions.length);
 		if (key.return) setSelected(!selected);
-		if (input === 'q') exit();
+		if (input === 'q') {
+			setActiveFocus('sidebar');
+		}
 	});
 
 	return (

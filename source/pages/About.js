@@ -29,7 +29,7 @@ const About = () => (
 				My mission is to build solutions that merge creativity, efficiency, and purpose.
 			</Text>
 			<Text color="gray" marginTop={1}>
-				💡 Motto: "Code the world you wish to live in."
+				💡 Motto: "What you know has nothing to do with your progress.. its What you learn."
 			</Text>
 		</Box>
 	</Box>

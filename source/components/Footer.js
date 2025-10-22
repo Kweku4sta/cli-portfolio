@@ -19,10 +19,6 @@ export default function Footer({currentPage}) {
 				⚡ Built with passion by <Text color="magentaBright">Ansah Forster</Text> — {new Date().getFullYear()}
 			</Text>
 
-			<Gradient name="summer">
-				<BigText text={`Focus: ${currentPage.toUpperCase()}`} font="tiny" />
-			</Gradient>
-
 		</Box>
 	);
 }

@@ -11,6 +11,10 @@ import Footer from './components/Footer.js';
 import Contact from './pages/Contact.js';
 import Projects from './pages/Project.js';
 import Experience from './pages/Experience.js';
+import { FocusProvider } from './context/FocusContext.js';
+import ContentWrapper from './components/ContentWrapper.js';
+import TransitionWrapper from './components/TransitionWrapper.js';
+
 
 export default function App() {
 	const [currentPage, setCurrentPage] = useState('About');
@@ -39,6 +43,7 @@ export default function App() {
 	};
 
 	return (
+		<FocusProvider>
 		<Box
 			flexDirection="column"
 			borderStyle="round"
@@ -52,12 +57,17 @@ export default function App() {
 			<Box flexDirection="row" marginTop={1} flexGrow={1}>
 				<Sidebar onSelect={setCurrentPage} />
 				<Box marginLeft={3} flexGrow={1} justifyContent="flex-start">
+					{/* <TransitionWrapper> */}
+					<ContentWrapper>
 					{renderPage()}
+					</ContentWrapper>
+					{/* </TransitionWrapper> */}
 				</Box>
 			</Box>
-			<Box marginTop={1}>
-				<Footer />
+			<Box marginTop={2}>
+				<Footer currentPage={currentPage} />
 			</Box>
 		</Box>
+		</FocusProvider>
 	);
 }

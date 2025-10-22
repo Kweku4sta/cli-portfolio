@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { Box, Text, useInput } from 'ink';
 import gradientString from 'gradient-string';
 
+import {useFocus} from '../context/FocusContext.js';
+
+
 export default function Projects() {
 	const [cursor, setCursor] = useState(0);
 	const [expanded, setExpanded] = useState(false);
+
+	const {activeFocus, setActiveFocus} = useFocus();
 
 	const projects = [
 		{
@@ -28,9 +33,13 @@ export default function Projects() {
 	];
 
 	useInput((input, key) => {
+		if (activeFocus !== 'page') return;
 		if (key.upArrow) setCursor((cursor - 1 + projects.length) % projects.length);
 		if (key.downArrow) setCursor((cursor + 1) % projects.length);
 		if (key.return) setExpanded(!expanded);
+		if (input === 'q') {
+			setActiveFocus('sidebar');
+		}	
 	});
 
     
@@ -39,8 +48,18 @@ export default function Projects() {
 
 	return (
 		<Box flexDirection="column" paddingX={2}>
-			<Text bold>{gradient('🚀 My Projects')}</Text>
+			<Text>
+						{gradient('╭──────────────────────────────╮')}
+					</Text>
+					<Text>
+						{gradient('│     🚀 My Projects            │')}
+					</Text>
+					<Text>
+						{gradient('╰──────────────────────────────╯')}
+					</Text>
+			{/* <Text bold>{gradient('🚀 My Projects')}</Text> */}
 			<Text color="gray">Use ↑ ↓ to browse projects, press Enter to expand/collapse.</Text>
+			
 
 			<Box flexDirection="column" marginTop={1}>
 				{projects.map((project, index) => {
@@ -68,6 +87,9 @@ export default function Projects() {
 			<Box marginTop={1}>
 				<Text dimColor>
 					Press <Text color="magentaBright">Enter</Text> to toggle details, or <Text color="cyanBright">↑ ↓</Text> to navigate.
+				</Text>
+				<Text dimColor>
+				Press <Text color="magentaBright">Q</Text> anytime to exit
 				</Text>
 			</Box>
 		</Box>

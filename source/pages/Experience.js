@@ -1,6 +1,9 @@
 import React from 'react';
-import { Box, Text } from 'ink';
+import { Box, Text, useInput } from 'ink';
 import gradientString from 'gradient-string';
+
+import {useFocus} from '../context/FocusContext.js';
+
 
 const gradient = gradientString(['cyan', 'magenta']);
 
@@ -37,6 +40,14 @@ const experiences = [
 ];
 
 export default function Experience() {
+	const {activeFocus, setActiveFocus} = useFocus();
+	
+	useInput((input, key) => {
+		if (activeFocus !== 'page') return;
+		if (input === 'q') {
+			setActiveFocus('sidebar');
+		}
+	});
 	return (
 		<Box flexDirection="column" paddingX={1}>
 			<Text bold color="cyanBright">
@@ -65,6 +76,9 @@ export default function Experience() {
 
 			<Box marginTop={1}>
 				<Text dimColor>↑↓ Navigate using sidebar • Built with ❤️ in React Ink</Text>
+				<Text dimColor>
+					Press <Text color="magentaBright">Q</Text> anytime to exit
+				</Text>
 			</Box>
 		</Box>
 	);
