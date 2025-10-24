@@ -9,7 +9,7 @@ import {useFocus} from '../context/FocusContext.js';
 
 
 const Sidebar = ({ onSelect }) => {
-	const sections = [ 'About', 'Skills', 'Projects', 'Experience','Contact' ];
+	const sections = [ 'About', 'Skills', 'Projects','Contact', 'Experience' ];
 	const [activeIndex, setActiveIndex] = useState(0);
 	const gradient = gradientString('cyan', 'magenta');
 

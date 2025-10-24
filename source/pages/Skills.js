@@ -30,7 +30,7 @@ const Skills = () => {
 						{gradient('╭──────────────────────────────╮')}
 					</Text>
 					<Text>
-						{gradient('│     ⚙️  Technical Skills     │')}
+						{gradient('│     ⚙️  Technical Skills    │')}
 					</Text>
 					<Text>
 						{gradient('╰──────────────────────────────╯')}

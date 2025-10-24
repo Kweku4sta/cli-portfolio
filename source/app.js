@@ -18,10 +18,15 @@ import TransitionWrapper from './components/TransitionWrapper.js';
 
 export default function App() {
 	const [currentPage, setCurrentPage] = useState('About');
-
+    
+		useEffect(() => {
+			process.stdout.write('\x1Bc');
+		}, [currentPage]);
+	const [isReady, setIsReady] = useState(false);
 	useEffect(() => {
-		process.stdout.write('\x1Bc');
-	}, [currentPage]);
+		const timeout = setTimeout(() => setIsReady(true), 100);
+		return () => clearTimeout(timeout);
+	}, []);
 
 	const renderPage = () => {
 		switch (currentPage) {
@@ -40,7 +45,11 @@ export default function App() {
 			default:
 				return null;
 		}
+
 	};
+	if (!isReady) {
+		return null; 
+	}
 
 	return (
 		<FocusProvider>

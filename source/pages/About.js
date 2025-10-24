@@ -5,6 +5,7 @@ import gradientString from 'gradient-string';
 const gradient = gradientString('cyan', 'magenta');
 
 const About = () => (
+	
 	<Box flexDirection="column" paddingLeft={2}>
 		<Text>
 			{gradient('╭──────────────────────────────╮')}
@@ -22,8 +23,8 @@ const About = () => (
 				a passionate full-stack developer from Tema, Ghana.
 			</Text>
 			<Text color="gray">
-				I love building powerful backends with <Text color="cyanBright">Python</Text> and
-				interactive frontends with <Text color="magentaBright">React</Text>.
+				I love engineering solutions with <Text color="cyanBright">Python</Text> and
+				 <Text color="magentaBright"> Javascript</Text>.
 			</Text>
 			<Text color="whiteBright" marginTop={1}>
 				My mission is to build solutions that merge creativity, efficiency, and purpose.

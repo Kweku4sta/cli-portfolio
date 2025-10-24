@@ -10,12 +10,14 @@ export default function ContentWrapper({ children }) {
 		<Box
 			flexDirection="column"
 			marginLeft={3}
-			minHeight={20}
+			minHeight={6}
 			width="90%"
 			// borderStyle="round"
 			// borderColor="cyan"
 			paddingX={1}
 			paddingY={1}
+			key={children.type.name} 
+
 		>
 			{children}
 		</Box>

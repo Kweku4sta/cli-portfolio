@@ -36,7 +36,11 @@ export default function Projects() {
 		if (activeFocus !== 'page') return;
 		if (key.upArrow) setCursor((cursor - 1 + projects.length) % projects.length);
 		if (key.downArrow) setCursor((cursor + 1) % projects.length);
-		if (key.return) setExpanded(!expanded);
+		if (key.return){
+			process.stdout.write('\x1Bc');
+			setExpanded(!expanded);
+		}
+			//  setExpanded(!expanded);
 		if (input === 'q') {
 			setActiveFocus('sidebar');
 		}	
