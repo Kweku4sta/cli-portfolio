@@ -13,15 +13,15 @@ const experiences = [
 		company: 'Quantum Group',
 		duration: '2025 — Present',
 		details: [
-			'Led development of custom Odoo modules improving workflow efficiency by 40%.',
+			'Collaborated on the development of custom Odoo modules improving workflow efficiency by 40%.',
 			'Integrated Keycloak for authentication and APISIX for API gateway security.',
-			'Mentored a team of developers, introducing modern CI/CD practices.'
+			'Optimized PostgreSQL database queries, enhancing application performance and reliability.'
 		]
 	},
 	{
 		role: 'Backend Engineer',
 		company: 'CodeStar Hub',
-		duration: '2012 — 2015',
+		duration: '2025 — Present',
 		details: [
 			'Built scalable FastAPI services for fintech and real estate clients.',
 			'Developed RESTful APIs with robust test coverage and efficient SQLAlchemy integration.',
@@ -31,7 +31,7 @@ const experiences = [
 	{
 		role: 'Frontend Developer',
 		company: 'Freelance',
-		duration: '2010 — 2012',
+		duration: '2022 — 2024',
 		details: [
 			'Created responsive interfaces using Vue.js and React.',
 			'Delivered clean, accessible UI/UX for client dashboards and admin panels.'
@@ -44,7 +44,7 @@ export default function Experience() {
 	
 	useInput((input, key) => {
 		if (activeFocus !== 'page') return;
-		if (input === 'q') {
+		if (input === 'b') {
 			setActiveFocus('sidebar');
 		}
 	});
@@ -75,9 +75,9 @@ export default function Experience() {
 			))}
 
 			<Box marginTop={1}>
-				<Text dimColor>↑↓ Navigate using sidebar • Built with ❤️ in React Ink</Text>
+				<Text dimColor>↑↓ Navigate using sidebar • Built with ❤️ in React Ink </Text>
 				<Text dimColor>
-					Press <Text color="magentaBright">Q</Text> anytime to exit
+					Press <Text color="magentaBright">b</Text> to focus on the sidebar.
 				</Text>
 			</Box>
 		</Box>

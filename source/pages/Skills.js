@@ -1,6 +1,10 @@
 import React from 'react';
-import { Box, Text } from 'ink';
+import { Box, Text, useInput } from 'ink';
 import gradientString from 'gradient-string';
+
+import {useFocus} from '../context/FocusContext.js';
+
+
 
 const gradient = gradientString('cyan', 'magenta');
 
@@ -19,11 +23,19 @@ const skills = [
 	},
 	{
 		category: 'Other Skills',
-		items: ['REST APIs', 'CI/CD', 'Authentication & IAM', 'System Design'],
+		items: ['REST APIs', 'CI/CD', 'Authentication & IAM', 'System Design', 'IoT Integration', 'Database Management', 'Unit Testing', 'Agile Methodologies', 'UI/UX Principles', 'Version Control (Git)'],
 	},
 ];
 
-const Skills = () => {
+export default function Skills ()  {
+	const {activeFocus, setActiveFocus} = useFocus();
+	useInput((input, key) => {
+		if (activeFocus !== 'page') return;
+		if (key.return) {
+			setActiveFocus('sidebar');
+		}
+	});
+
 	return (
 		<Box flexDirection="column" paddingLeft={2}>
 			<Text>
@@ -62,4 +74,4 @@ const Skills = () => {
 	);
 };
 
-export default Skills;
+// export default Skills;

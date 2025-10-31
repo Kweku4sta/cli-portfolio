@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box, Text } from 'ink';
-import Gradient from 'ink-gradient';
-import BigText from 'ink-big-text';
+import gradientString from 'gradient-string';
+const gradient = gradientString('cyan', 'magenta');
+
 
 export default function Footer({currentPage}) {
 	return (
@@ -18,6 +19,12 @@ export default function Footer({currentPage}) {
 			<Text color="cyanBright">
 				⚡ Built with passion by <Text color="magentaBright">Ansah Forster</Text> — {new Date().getFullYear()}
 			</Text>
+			<Text color="gray" dimColor>
+				{gradient('──────')}
+				You are currently viewing: <Text color="yellowBright">{currentPage}</Text>
+				{gradient('──────')}
+			</Text>
+
 
 		</Box>
 	);

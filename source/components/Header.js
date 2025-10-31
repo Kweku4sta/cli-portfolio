@@ -7,15 +7,21 @@ import { rainbow } from 'gradient-string';
 const Header = () => {
     const gradient = gradientString(['cyan', 'magenta', 'purple']);
 	const name = figlet.textSync('Ansah Forster', { font: 'Standard' });
-	const role = 'Software Engineer';
+	const role = 'Software Engineer | Content Creator';
 	const stack = 'Python • JavaScript • FastAPI • Odoo • React';
     const message = "Ansah Forster — Software Engineer ⚡";
+	const founderMessage = "Founder @CodeStarHub (youtube.com/@CodeStar.4sta)";
 
     const messages = [
 	"Ansah Forster — Software Engineer ⚡",
 	"Backend Developer | Python & JavaScript 💻",
 	"API & System Integrator 🌐",
-	"Building the Future with Code 🚀"
+	"Building the Future with Code 🚀",
+	"Open Source Enthusiast 🤝",
+	"Tech Content Creator 🎥",
+	"Founder @CodeStarHub 💡",
+	"Don't buy me a coffee,subscribe to my channel! @youtube.com/codestar.4sta ☕",
+	"Let's Connect and Collaborate! 🤝",
     ];
 
     // const [displayedText, setDisplayedText] = useState('');
@@ -75,6 +81,7 @@ const Header = () => {
 			</Text>
 			<Text color="gray">{role}</Text>
 			<Text color="magenta">{stack}</Text>
+			<Text color="cyanBright">{founderMessage}</Text>
 		</Box>
 	);
 };

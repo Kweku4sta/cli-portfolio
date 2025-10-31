@@ -23,7 +23,7 @@ export default function Contact() {
 		if (key.upArrow) setCursor((cursor - 1 + contactOptions.length) % contactOptions.length);
 		if (key.downArrow) setCursor((cursor + 1) % contactOptions.length);
 		if (key.return) setSelected(!selected);
-		if (input === 'q') {
+		if (input === 'b') {
 			setActiveFocus('sidebar');
 		}
 	});
@@ -34,7 +34,7 @@ export default function Contact() {
 				✨ Let's Connect
 			</Text>
 			<Text color="cyanBright">
-				Use ↑ ↓ to browse, Enter to reveal, or press Q to quit.
+				Use ↑ ↓ to browse, Enter to reveal, or press b to go back.
 			</Text>
 
 			<Box flexDirection="column" marginTop={1}>
@@ -55,7 +55,7 @@ export default function Contact() {
 
 			<Box marginTop={1}>
 				<Text dimColor>
-					Press <Text color="magentaBright">Q</Text> anytime to exit
+					Press <Text color="magentaBright">b</Text> anytime to go back to the sidebar.
 				</Text>
 			</Box>
 		</Box>

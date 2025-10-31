@@ -16,19 +16,19 @@ export default function Projects() {
 			title: '🏡 Estate Property Management System',
 			stack: 'FastAPI, Vue.js, PostgreSQL',
 			description: 'A real estate platform connecting salespersons, buyers, and admins with property listings, offers, and analytics.',
-			link: 'github.com/ansahforster/estate-property-system'
+			link: 'https://github.com/Kweku4sta/real-estate-property'
 		},
 		{
 			title: '🚰 Smart Water Supply Management',
 			stack: 'ESP32, Flutter, Firebase',
 			description: 'IoT system monitoring and optimizing urban water supply with real-time analytics and control.',
-			link: 'github.com/ansahforster/smart-water-system'
+			link: 'https://github.com/DTheOdds/Frontend-dev'
 		},
 		{
 			title: '📚 E-High Learning Platform',
 			stack: 'React, Node.js, MongoDB',
 			description: 'An interactive online learning platform offering courses, assessments, and live classroom features.',
-			link: 'github.com/ansahforster/e-high'
+			link: 'https://github.com/swe-code-craft/e-high'
 		}
 	];
 
@@ -41,7 +41,7 @@ export default function Projects() {
 			setExpanded(!expanded);
 		}
 			//  setExpanded(!expanded);
-		if (input === 'q') {
+		if (input === 'b') {
 			setActiveFocus('sidebar');
 		}	
 	});
@@ -93,7 +93,7 @@ export default function Projects() {
 					Press <Text color="magentaBright">Enter</Text> to toggle details, or <Text color="cyanBright">↑ ↓</Text> to navigate.
 				</Text>
 				<Text dimColor>
-				Press <Text color="magentaBright">Q</Text> anytime to exit
+				Press <Text color="magentaBright">b</Text> anytime to go back to the sidebar.
 				</Text>
 			</Box>
 		</Box>

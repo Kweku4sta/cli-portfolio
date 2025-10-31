@@ -30,8 +30,10 @@ const About = () => (
 				My mission is to build solutions that merge creativity, efficiency, and purpose.
 			</Text>
 			<Text color="gray" marginTop={1}>
-				💡 Motto: "What you know has nothing to do with your progress.. its What you learn."
+				💡 Motto: "What you know has nothing to do with your progress.. it's What you learn."
 			</Text>
+
+			
 		</Box>
 	</Box>
 );
